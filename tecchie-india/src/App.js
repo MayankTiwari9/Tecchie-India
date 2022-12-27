@@ -1,19 +1,22 @@
 import './App.css';
-import {BrowserRouter, Routes,Route} from 'react-router-dom';
+import {BrowserRouter,Routes,  Route} from 'react-router-dom';
+import SignIn from './Components/SignIn';
+import SignUp from './Components/SignUp';
 import PreNavBar from './Components/PreNavBar';
-
 
 function App() {
   return (
-    <div>
+    <>
     <BrowserRouter>
-    <PreNavBar/>
-      <Routes>
-        <Route></Route>
-      </Routes>
+    <Routes>
+    <Route path='/' element={<PreNavBar/>}></Route>
+    <Route path="/sign-in" element={<SignIn/>}></Route>
+    <Route path="/sign-up" element={<SignUp/>}></Route>
+    </Routes>
     </BrowserRouter>
-    </div>
-  );
+    </>
+  )
 }
-
-export default App;
+  
+  
+  export default App;
